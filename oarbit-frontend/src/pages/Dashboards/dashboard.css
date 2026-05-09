@@ -1,0 +1,13 @@
+/** ATHLETE DASHBOARD **/ 
+
+.athlete-dashboard {}
+
+.athlete-dashboard .athlete-dashboard-content {}
+
+.athlete-dashboard-content .date-identifier,
+.coach-dashboard-content .date-identifier {
+  color: #fff; 
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  padding-left: 5%;
+}

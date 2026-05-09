@@ -1,0 +1,122 @@
+.breaker {
+  width: 90%; 
+  border: 1px solid #5C5C5C; 
+}
+
+.date-selector-container {
+  height: 17vh; 
+}
+
+.date-selector-content {
+  height: 100%; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-selector-title {
+  display: flex;
+  width: 100%; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 0 5%; 
+}
+
+.date-selector-title p {
+  margin: 2vh 5% 0 5%; 
+}
+
+.date-selector-title .title {
+  font-weight: 500; 
+  font-size: 1.2rem; 
+  color: #fff;
+}
+
+.date-selector-title .month {
+  color: #2CB0F4;
+  font-size: 0.8rem;
+}
+
+/** Scroller **/
+
+.date-selector-scroller {
+  display: flex;
+  align-items: center;
+  gap: 8px ;
+  width: 100%; 
+}
+
+.arrow-btn {
+  width: 1.5rem; 
+  height: 1.5rem; 
+  border-radius: 50%; 
+  border: 1px solid #5C5C5C; 
+  background-color: rgba(92, 92, 92, 0.2);
+  cursor: pointer;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #2CB0F4; 
+}
+
+.day-track {
+  flex: 1; 
+  overflow: hidden; 
+  min-width: 0; 
+}
+
+.day-track-content {
+  display: flex;
+  gap: 6px;
+}
+
+.dayBtn {
+  flex: 1 1 0; 
+  min-width: 0; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px; 
+  padding: 10px 4px; 
+  border-radius: 1rem;
+  border: 1px solid #5C5C5C;
+  background: #011D4D; 
+  cursor: pointer; 
+}
+
+.dayBtnActive {
+  background: #2CB0F4;
+  color: white;
+  border: 1px solid #011D4D;
+}
+
+.dayLabel {
+  font-size: 0.6rem;
+  font-weight: 500; 
+  color: #5C5C5C; 
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dayNum {
+  font-size: 1rem; 
+  font-weight: 500;
+  color: #8F8F8F; 
+  line-height: 1; 
+}
+
+.dayLabelActive,
+.dayNumActive {
+  color: white;
+}
+
+.weekLabel {
+  text-align: center;
+  font-size: 0.8rem; 
+  color: #5C5C5C;
+  margin-top: 8px; 
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,79 @@
+.breaker {
+  width: 90%; 
+  border: 1px solid #5C5C5C;  
+}
+
+.create-page{
+
+}
+
+.create-page .create-content {
+  display:flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-title {
+  padding: 2vh; 
+  width: 90%;
+  display: flex;
+  justify-content: baseline;
+}
+
+.create-title p {
+  color: #fff; 
+  font-size: 1.2rem;
+}
+
+.create-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  margin-bottom: 1rem;
+}
+
+.create-selection .selection-btn {
+  width: 80%; 
+  padding: 1rem 2rem;
+  border: 1px solid #011D4D; 
+  border-radius: 10px; 
+  margin-top: 1rem;
+  background-color: #2CB0F4;
+}
+
+.create-selection .breaker {
+  margin-top: 1rem; 
+  margin-bottom: 1rem; 
+}
+
+.create-selection p {
+  color: #5C5C5C;
+  font-size: 0.9rem;
+}
+
+.selection-back {
+  margin: 1rem;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 1000;
+  color: #5C5C5C;
+}
+
+.template-builder {
+  width: 90%; 
+}
+
+.template-builder-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.template-builder-title .title {
+  font-size: 1.2rem;
+  color: white;
+}
