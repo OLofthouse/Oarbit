@@ -2,13 +2,16 @@ import { useState, useEffect } from 'react';
 import CoachNavbar from "../../components/navbar/CoachNavbar";
 import './createactivity.css';
 import { WorkoutTemplate, workoutTypeEnum } from "../../types/types";
+import TemplateBuilder from '../../components/Builders/TemplateBuilder';
 
 export default function CreateActivity() {
 
   const [selectionStep, setSelectionStep] = useState(0);
+  const [selectionWorkoutType, setSelectionWorkoutType] = useState(workoutTypeEnum.singleDistance); 
 
   function handleSelectionClick(workoutType: workoutTypeEnum) {
     console.log("Workout type selected new: ", workoutType);
+    setSelectionWorkoutType(workoutType); 
     setSelectionStep(1);
   }
 
@@ -19,6 +22,10 @@ export default function CreateActivity() {
 
   function handleReturnClick() {
     setSelectionStep(0);
+  }
+
+  const handleReturnClickArrow = () => {
+    setSelectionStep(0); 
   }
 
   return (
@@ -47,6 +54,9 @@ export default function CreateActivity() {
                 <div className="selection-back" onClick={handleReturnClick}>&#11013; Back</div>
                 <div className="title">Build Session</div>
               </div>
+
+              <TemplateBuilder workoutType={selectionWorkoutType} discardWorkout={handleReturnClickArrow}/>
+
             </div>
           </> : <>
             <div className="selection-back" onClick={handleReturnClick}>&#11013; Back</div>
@@ -57,7 +67,8 @@ export default function CreateActivity() {
           <div className="breaker"></div>
         </div>
       </div>
-
+            
+      <div className="navbar-padding"></div>
       <CoachNavbar activePage="CreateActivity" />
     </>
   )

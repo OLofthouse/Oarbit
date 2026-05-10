@@ -1,4 +1,4 @@
-enum trainingTypeEnum {
+export const enum trainingTypeEnum {
   Water = "Water",
   Land = "Gym",
   None = "Unset",
@@ -51,4 +51,4 @@ interface CompleteWorkoutFromTemplate {
   intervals: IntervalComplete[],
 }
 
-export type {WorkoutTemplate, CompleteWorkoutFromTemplate};
+export type {WorkoutTemplate, CompleteWorkoutFromTemplate, IntervalTemplate, IntervalComplete};

@@ -1,0 +1,176 @@
+.single-input-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-input-unit {
+  position: relative; 
+  right: 9px;
+  font-size: 0.6rem;
+  height: 100%;
+}
+
+/* .single-input-wrap input {
+  text-align: right; 
+  padding-right: 1rem;
+} */
+
+.template-builder-component {
+  border: none;
+  background-color: #011D4D;
+  padding: 0.1rem 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.template-builder-component form {
+  padding: 0;
+}
+
+.template-builder-component form input,
+.template-builder-component form select {
+  width: 93%;
+  padding-left: 2%;
+}
+
+#template-coach-input {
+  width: 96%;
+}
+
+.template-builder-component select{
+  padding: 0.6rem 0;
+  background-color: #4A4E63;
+  color: #828282;
+  border: 1px solid #4A4E63;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.template-input-container {
+  width: 100%;
+}
+
+form .overview-information {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form .overview-information .overview-title {
+  color: #5C5C5C; 
+  text-transform: uppercase; 
+  font-size: 0.8rem;
+}
+
+form .form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.template-input-container p{
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color:#8F8F8F;
+}
+
+.template-builder-component .interval-information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.template-builder-component .interval-information .title-container {
+  display: flex;
+  width: 100%;
+  color: #5C5C5C; 
+  text-transform: uppercase; 
+  font-size: 0.8rem;
+}
+
+.template-builder-component .add-interval-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.template-builder-component .add-interval-btn {
+  background: transparent;
+  border: 1px dotted #5C5C5C;
+  color: #828282;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+.template-builder-component .submit-buttons {
+  display: flex;
+  width: 80%;
+  margin-bottom: 1rem;
+  gap: 0.6rem;
+}
+
+.template-builder-component .discard-btn {
+  background: transparent;
+  border: 1px solid #5C5C5C;
+  color: #828282;
+}
+
+.template-builder-component .save-btn {
+  border: 1px solid #011D4D;
+}
+
+.interval-information .table-wrap {
+  width: 100%;
+}
+
+.interval-information table {
+  border: 1px solid #0A1128;
+  border-radius: 0.6rem;
+  margin-bottom: 0.8rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.interval-information thead {
+  background-color: #0a1120; 
+}
+
+.interval-information thead th {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #5C5C5C;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+.interval-information td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #0a1120;
+  vertical-align: middle;
+}
+
+.interval-information .cell-input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interval-information .cell-input input {
+  margin-bottom: 0;
+}
+
+.interval-information .table-iv-num {
+  color: #828282;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.interval-information .table-del-btn {
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+
