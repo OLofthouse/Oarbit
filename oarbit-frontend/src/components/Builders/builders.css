@@ -173,4 +173,23 @@ form .form-row {
   font-size: 0.8rem;
 }
 
+#view-builder-title {
+  margin-top: 0.4rem;
+}
 
+.log-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-builder-log-btn {
+  width: 80%;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  border: none; 
+}
+
+#view-builder-component {
+  margin-bottom: 0;
+}

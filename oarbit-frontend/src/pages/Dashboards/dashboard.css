@@ -1,4 +1,4 @@
-/** ATHLETE DASHBOARD **/ 
+/** ATHLETE DASHBOARD **/
 
 .athlete-dashboard {}
 
@@ -6,8 +6,94 @@
 
 .athlete-dashboard-content .date-identifier,
 .coach-dashboard-content .date-identifier {
-  color: #fff; 
+  color: #fff;
   font-size: 0.8rem;
   margin-top: 1rem;
   padding-left: 5%;
+}
+
+/* Workout Card CSS */
+
+.card-list {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-list-content {
+  width: 90%;
+}
+
+.workout-card {
+  margin-bottom: 2rem;
+  padding: 0.2rem 0.6rem;
+  padding-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem #124661;
+  color: white;
+}
+
+.workout-card .card-title {
+  font-size: 1.2rem;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-row .assigned-status {
+  display: flex;
+  align-items: center;
+}
+
+.card-row .assigned-status span {
+  color: #5C5C5C; 
+  text-transform: uppercase; 
+  font-size: 0.8rem;
+}
+
+.time-location {
+  color: #5C5C5C;
+  font-size: 0.9rem;
+}
+
+details > summary {
+  list-style: none;
+}
+
+summary::webkit-details-marker {display: none}
+
+details .session-info {
+  margin-top: 1rem; 
+}
+
+
+
+
+
+
+
+
+
+@keyframes open {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+/* closing animation */
+@keyframes close {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+details[open] summary~* {
+  animation: open .5s
+}
+
+/* closing class */
+details.closing summary~* {
+  animation: close .5s
 }

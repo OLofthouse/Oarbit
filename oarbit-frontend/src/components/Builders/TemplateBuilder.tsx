@@ -7,28 +7,12 @@ interface TemplateBuilderProps {
   workoutType: workoutTypeEnum,
   discardWorkout: () => void;
 }
-//interval: IntervalTemplate, index: number, onChange: void, onDelete: void
-function IntervalRow(index: number) {
-  console.log("Interval roww");
-
-  return (
-    <>
-      <tr>
-        <td>
-          {index}
-        </td>
-        <td>Test</td>
-      </tr>
-    </>
-  )
-}
 
 export default function TemplateBuilder(props: TemplateBuilderProps) {
 
   const emptyInterval: IntervalTemplate = { intervalNumber: 1, targetDistance: null, targetTime: null };
   const [intervals, setIntervals] = useState<IntervalTemplate[]>([emptyInterval]);
   const [numIntervals, setNumIntervals] = useState(1);
-  const intervalRows = [];
 
   function dateTodayString(): string {
     const today = new Date();

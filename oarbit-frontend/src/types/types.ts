@@ -11,6 +11,11 @@ export const enum workoutTypeEnum {
   intervalTime = "Interval Time",
 }
 
+export const enum assignedWorkoutStatus {
+  Assigned = "Assigned", 
+  Completed = "Completed", 
+}
+
 interface IntervalTemplate {
   intervalNumber: number, 
   targetDistance: number | null, 
@@ -36,11 +41,16 @@ interface WorkoutTemplate {
   intervals: IntervalTemplate[]
 }
 
+interface AssignedWorkout extends WorkoutTemplate {
+  status: assignedWorkoutStatus
+}
+
 interface CompleteWorkoutFromTemplate {
   title: string,
   date: Date, 
   location: string,
   assignedCoach: string,
+  status: assignedWorkoutStatus, 
   trainingType: trainingTypeEnum, 
   workoutType: workoutTypeEnum,
   totalDistance: number | null, 
@@ -51,4 +61,4 @@ interface CompleteWorkoutFromTemplate {
   intervals: IntervalComplete[],
 }
 
-export type {WorkoutTemplate, CompleteWorkoutFromTemplate, IntervalTemplate, IntervalComplete};
+export type {WorkoutTemplate, AssignedWorkout, CompleteWorkoutFromTemplate, IntervalTemplate, IntervalComplete};
