@@ -1,0 +1,21 @@
+.view-activities-page {}
+
+.view-activities-page .view-activities-content {}
+
+.view-activities-content .date-identifier {
+  color: #fff; 
+  font-size: 0.8rem; 
+  margin-top: 1rem; 
+  padding-left: 5%; 
+}
+
+.athlete-name {
+  color: #fff !important; 
+}
+
+.view-activities-page form table tbody td {
+  color: #5C5C5C;
+  font-size: 0.8rem;
+  text-align: center;
+  justify-content: center;
+}
