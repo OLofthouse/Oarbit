@@ -193,3 +193,106 @@ form .form-row {
 #view-builder-component {
   margin-bottom: 0;
 }
+
+.builder-component .header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4vh;
+  padding: 0 1rem;
+}
+
+.builder-component .header .title {
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex; 
+  align-items: center;
+}
+
+.builder-component .header .log-assigned-back {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-weight: 1000; 
+  color: #5C5C5C; 
+  margin: 1rem; 
+  padding: 0.4rem;
+}
+
+.overview-information .breaker {
+  width: 100%;
+}
+
+/* SESSION TOTALS */
+
+.session-totals {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-totals p {
+  margin: 0;
+  color: #828282;
+  font-size: 0.9rem;
+}
+
+.session-totals .session-totals-row {
+  display: flex;
+}
+
+#session-totals-row-2 {
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+#session-totals-row-2 > div {
+  max-width: 4rem; 
+}
+
+.session-totals input {
+  background-color: #0A1128;
+}
+
+.session-totals input.small {
+  background-color: #4A4E63;
+  border: 1px solid #0A1128;
+}
+
+/* Prefilled Session Intervals Table */
+
+.cell-input details {
+  width: 100%;
+}
+
+.cell-input details summary {
+  text-align: center;
+  color: #8F8F8F;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+details .intervals-input-container {
+  width: 100%;
+  margin-top: 0.6rem;
+}
+
+.intervals-input-container .intervals-input-container-row {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+
+.intervals-input-container-row p {
+  margin: 0;
+  color: #828282;
+  font-size: 0.9rem;
+}
+
+.intervals-input-container input {
+  background-color: #0A1128;
+  color: #828282;
+}
+
+.intervals-input-container input.small {
+  background-color: #4A4E63;
+  border: 1px solid #0A1128;
+  color: #0a1120;
+}

@@ -16,7 +16,7 @@ const fakeWorkouts: AssignedWorkout[] = [
     intervals: [{
       intervalNumber: 1,
       targetDistance: 2000,
-      targetTime: null,
+      targetTimeSecs: null,
     }],
     status: assignedWorkoutStatus.Assigned
   },
@@ -30,12 +30,12 @@ const fakeWorkouts: AssignedWorkout[] = [
     intervals: [{
       intervalNumber: 1,
       targetDistance: null,
-      targetTime: 40,
+      targetTimeSecs: 2400,
     },
     {
       intervalNumber: 2,
       targetDistance: null,
-      targetTime: 40,
+      targetTimeSecs: 2400,
     }
     ],
     status: assignedWorkoutStatus.Assigned
@@ -50,8 +50,34 @@ const fakeWorkouts: AssignedWorkout[] = [
     intervals: [{
       intervalNumber: 1,
       targetDistance: 2000,
-      targetTime: null,
+      targetTimeSecs: null,
     }],
+    status: assignedWorkoutStatus.Assigned
+  },
+  {
+    title: "3x5k",
+    date: new Date(),
+    location: "Sport Bu",
+    assignedCoach: "OL",
+    trainingType: trainingTypeEnum.Land,
+    workoutType: workoutTypeEnum.intervalDistance,
+    intervals: [
+      {
+        intervalNumber: 1, 
+        targetDistance: 5000, 
+        targetTimeSecs: null,
+      },
+      {
+        intervalNumber: 2, 
+        targetDistance: 5000, 
+        targetTimeSecs: null,
+      },
+      {
+        intervalNumber: 3, 
+        targetDistance: 5000, 
+        targetTimeSecs: null,
+      }
+    ],
     status: assignedWorkoutStatus.Assigned
   }
 ];
@@ -99,13 +125,13 @@ export default function AthleteDashboard() {
                         </div>
                       </div>
                     </summary>
-                    
+
                     <div className="session-info">
                       <div className="breaker"></div>
                       <p>Session Info</p>
-                      <ViewBuilder workout={workout}/>
+                      <ViewBuilder workout={workout} />
                     </div>
-                  
+
                   </details>
                 </div>
               ))}

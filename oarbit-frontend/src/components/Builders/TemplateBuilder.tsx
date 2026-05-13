@@ -10,7 +10,7 @@ interface TemplateBuilderProps {
 
 export default function TemplateBuilder(props: TemplateBuilderProps) {
 
-  const emptyInterval: IntervalTemplate = { intervalNumber: 1, targetDistance: null, targetTime: null };
+  const emptyInterval: IntervalTemplate = { intervalNumber: 1, targetDistance: null, targetTimeSecs: null };
   const [intervals, setIntervals] = useState<IntervalTemplate[]>([emptyInterval]);
   const [numIntervals, setNumIntervals] = useState(1);
 
@@ -36,7 +36,7 @@ export default function TemplateBuilder(props: TemplateBuilderProps) {
     const updatedInterval: IntervalTemplate = {
       intervalNumber: index,
       targetDistance: (props.workoutType == workoutTypeEnum.intervalDistance || props.workoutType == workoutTypeEnum.singleDistance) ? changedValue : null,
-      targetTime: (props.workoutType == workoutTypeEnum.intervalTime || props.workoutType == workoutTypeEnum.singleTime) ? changedValue : null
+      targetTimeSecs: (props.workoutType == workoutTypeEnum.intervalTime || props.workoutType == workoutTypeEnum.singleTime) ? changedValue : null
     }
     setIntervals((prev) => prev.map((iv, i) => (i === index ? updatedInterval : iv)));
     console.log(intervals, updatedInterval);
@@ -48,7 +48,7 @@ export default function TemplateBuilder(props: TemplateBuilderProps) {
     setIntervals((prev) => [...prev, { 
       intervalNumber: prev.length, 
       targetDistance: (props.workoutType == workoutTypeEnum.intervalDistance ? prev[prev.length - 1].targetDistance : null), 
-      targetTime: (props.workoutType == workoutTypeEnum.intervalTime ? prev[prev.length - 1].targetTime : null)
+      targetTimeSecs: (props.workoutType == workoutTypeEnum.intervalTime ? prev[prev.length - 1].targetTimeSecs : null)
     }])
   }
 
@@ -58,7 +58,7 @@ export default function TemplateBuilder(props: TemplateBuilderProps) {
     }
 
     if (props.workoutType == workoutTypeEnum.singleTime || props.workoutType == workoutTypeEnum.intervalTime) {
-      return intervals[index].targetTime ?? "";
+      return intervals[index].targetTimeSecs ?? "";
     }
   }
 

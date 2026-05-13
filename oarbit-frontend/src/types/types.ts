@@ -19,11 +19,10 @@ export const enum assignedWorkoutStatus {
 interface IntervalTemplate {
   intervalNumber: number, 
   targetDistance: number | null, 
-  targetTime: number | null,
+  targetTimeSecs: number | null,
 }
 
-interface IntervalComplete {
-  intervalNumber: number, 
+interface IntervalComplete extends IntervalTemplate {
   completedDistance: number | null, 
   completedTimeSecs: number | null, 
   completedSplitSecs: number | null,

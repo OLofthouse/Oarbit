@@ -1,6 +1,7 @@
 import { AssignedWorkout, IntervalTemplate, workoutTypeEnum } from '../../types/types';
 import { useNavigate } from 'react-router-dom'; 
 import './builders.css';
+import { secsToTimeString } from '../../utils/useTimeInput';
 
 interface ViewBuilerProps {
   workout: AssignedWorkout
@@ -13,12 +14,12 @@ export default function ViewBuilder(props: ViewBuilerProps) {
   function getTargetPlaceholderValue(interval: IntervalTemplate) {
     if (props.workout.workoutType == workoutTypeEnum.singleDistance ||
       props.workout.workoutType == workoutTypeEnum.intervalDistance) {
-      if (interval.targetDistance) return interval.targetDistance
+      if (interval.targetDistance) return interval.targetDistance.toString()
     }
 
     if (props.workout.workoutType == workoutTypeEnum.singleTime || 
       props.workout.workoutType == workoutTypeEnum.intervalTime) {
-        if (interval.targetTime) return interval.targetTime
+        if (interval.targetTimeSecs) return secsToTimeString(interval.targetTimeSecs);
       }
 
     return "";
@@ -78,7 +79,7 @@ export default function ViewBuilder(props: ViewBuilerProps) {
                     {props.workout.intervals.map((interval) => (
                       <tr>
                         <td className="table-iv-num">{interval.intervalNumber}</td>
-                        <td className="cell-input"><input disabled type="number" value={getTargetPlaceholderValue(interval)} /></td>
+                        <td className="cell-input"><input disabled type="text" value={getTargetPlaceholderValue(interval)} /></td>
                       </tr>
                     ))}
                   </tbody>
