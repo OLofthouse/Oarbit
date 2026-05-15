@@ -307,3 +307,18 @@ details .intervals-input-container {
   border: 1px solid #0A1128;
   color: #0a1120;
 }
+
+.matched-past-container {
+  display: flex;
+  justify-content: center;
+}
+
+.matched-past-container .button-container {
+   width:60%;
+}
+
+.matched-past-container td {
+  color: #5C5C5C; 
+  font-size: 0.8rem;
+  text-align: center;
+}
