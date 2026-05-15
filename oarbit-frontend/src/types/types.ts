@@ -60,6 +60,21 @@ interface CompleteWorkoutFromTemplate {
   intervals: IntervalComplete[],
 }
 
+interface CompleteWorkoutFromManual {
+  title: string, 
+  date: Date, 
+  location: string, 
+  status: assignedWorkoutStatus, 
+  trainingType: trainingTypeEnum, 
+  workoutType: workoutTypeEnum, 
+  totalDistance: number | null, 
+  totalTimeSecs: number | null, 
+  totalSplitSecs: number | null, 
+  avgHeartRate: number | null, 
+  avgStrokeRate: number | null, 
+  intervals: IntervalComplete[]
+}
+
 interface CoachOverviewWorkout {
   title: string, 
   date: Date,
@@ -77,4 +92,4 @@ interface CoachOverviewWorkout {
   athleteName: string
 }
 
-export type {WorkoutTemplate, AssignedWorkout, CompleteWorkoutFromTemplate, IntervalTemplate, IntervalComplete, CoachOverviewWorkout};
+export type {WorkoutTemplate, AssignedWorkout, CompleteWorkoutFromTemplate, IntervalTemplate, IntervalComplete, CoachOverviewWorkout, CompleteWorkoutFromManual};

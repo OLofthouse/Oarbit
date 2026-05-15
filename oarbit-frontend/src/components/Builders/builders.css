@@ -109,10 +109,21 @@ form .form-row {
   gap: 0.6rem;
 }
 
-.template-builder-component .discard-btn {
+.template-builder-component .discard-btn,
+.discard-btn-manual-intervals {
   background: transparent;
   border: 1px solid #5C5C5C;
   color: #828282;
+}
+
+.add-intervals-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.discard-btn-manual-intervals {
+  width: 80%;
 }
 
 .template-builder-component .save-btn {
