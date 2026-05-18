@@ -172,11 +172,12 @@ export function useControlledTimeInput(completedTimeSecs: any, onCommit: any) {
   const [draft, setDraft] = useState<any>(null);
   const [error, setError] = useState<any>(null);
 
-  const displayValue = (draft ? draft : secsToTimeString(completedTimeSecs));
+  const displayValue = (draft);
+  // ?? secsToTimeString(completedTimeSecs)
 
   const onChange = useCallback((e: any) => {
     const raw = e.target.value;
-    if (!raw) { setDraft(""); setError(null); return; }
+    if (!raw) { setDraft(null); setError(null); return; }
     if (/[^\d:.]/.test(raw)) return;
     if ((raw.match(/\./g) || []).length > 1) return;
     if ((raw.match(/:/g) || []).length > 2) return;
@@ -195,7 +196,7 @@ export function useControlledTimeInput(completedTimeSecs: any, onCommit: any) {
         //setDraft(null);
       } 
     }
-  }, [displayValue, onCommit]);
+  }, [displayValue, onCommit]); 
 
   return {
     value: displayValue,

@@ -138,16 +138,13 @@ export default function LogManualBuilder() {
     let newTotalDistance: any = null, newTotalTimeSecs: any = null, newTotalSplitSecs: any = null, intervalsSplitted: any = 0,
       newAvgHeartRate: any = null, intervalsHearted: any = 0, newAvgStrokeRate: any = null, intervalsStroked: any = 0;
 
-    console.log("Here?", completeWorkout.intervals);
     completeWorkout.intervals.forEach((interval) => {
-      if (interval.completedDistance) { newTotalDistance += interval.completedDistance; console.log(newTotalDistance, interval.completedDistance) }
+      if (interval.completedDistance) { newTotalDistance += interval.completedDistance; /* console.log(newTotalDistance, interval.completedDistance)  */}
       if (interval.completedTimeSecs) newTotalTimeSecs += interval.completedTimeSecs;
       if (interval.completedSplitSecs) { newTotalSplitSecs += interval.completedSplitSecs; intervalsSplitted += 1 }
       if (interval.completedHeartRate) { newAvgHeartRate += interval.completedHeartRate; intervalsHearted += 1 }
       if (interval.completedStrokeRate) { newAvgStrokeRate += interval.completedStrokeRate; intervalsStroked += 1 }
     })
-
-    console.log("total distance", newTotalDistance);
 
     setCompleteWorkout((prev) => ({
       ...prev, totalDistance: newTotalDistance, totalTimeSecs: newTotalTimeSecs,
@@ -384,6 +381,69 @@ export default function LogManualBuilder() {
               <div className="total-spm">
                 <p>Average SPM</p>
                 <input type="number" inputMode="numeric" className="total-input small" onBlur={(e) => handleSingleUpdateSPM(Number(e.target.value))} />
+              </div>
+            </div>
+          </div>
+          <div className="breaker"></div>
+          <div className="interval-information">
+            <div className="title-container">
+              <p>{completeWorkout.workoutType}</p>
+            </div>
+            <div className="table-wrap">
+              <table>
+                <thead>
+                  <th style={{ width: "10%", maxWidth: "10%", minWidth: "10%" }}>#</th>
+                  <th>Interval Details</th>
+                  <th style={{ width: "10%", maxWidth: "10%", minWidth: "10%" }}>X</th>
+                </thead>
+                <tbody>
+                  {completeWorkout.intervals.map((interval, index) => (
+                    <tr>
+                      <td className="table-iv-num">{interval.intervalNumber}</td>
+                      <td className="cell-input">
+                        <details>
+                          <summary>Log Stats +</summary>
+                          <div className="intervals-input-container">
+                            <div className="intervals-input-container-row">           
+                              <div className="total-time">
+                                <p>Total Time</p>
+                                <FormIntervalTimeInputCell interval={interval} onUpdate={handleIntervalUpdateTime} />
+                              </div>
+                              <div className="total-distance">
+                                <p>Total Distance</p>
+                                <input className="total-input small" type="number" inputMode="numeric"
+                                  onBlur={(e) => { handleIntervalUpdateDistance(interval, Number(e.target.value)) }} 
+                                  placeholder={interval.completedDistance ? interval.completedDistance.toString() : ""}/>
+                              </div>
+                            </div>
+                            <div className="intervals-input-container-row">
+                              <div className="total-split">
+                                <p>Average Split</p>
+                                <input type="text" disabled value={interval.completedSplitSecs ? formatSplitTime(interval.completedSplitSecs) : ""} />
+                              </div>
+                              <div className="total-bpm">
+                                <p>Average HR</p>
+                                <input type="text" inputMode="numeric" className="total-input small"
+                                  placeholder={completeWorkout.avgHeartRate ? completeWorkout.avgHeartRate.toString() : ""}
+                                  onBlur={(e) => { handleIntervalUpdateHR(interval, Number(e.target.value)) }} />
+                              </div>
+                              <div className="total-spm">
+                                <p>Average SPM</p>
+                                <input type="text" inputMode="numeric" className="total-input small"
+                                  placeholder={completeWorkout.avgStrokeRate ? completeWorkout.avgStrokeRate.toString() : ""}
+                                  onBlur={(e) => { handleIntervalUpdateSPM(interval, Number(e.target.value)) }} />
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                      </td>
+                      <td onClick={() => handleDeleteInterval(index)}>X</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="add-intervals-btn-wrap">
+                <button type="button" className="discard-btn-manual-intervals" onClick={handleAddInterval}>+ Add Interval</button>
               </div>
             </div>
           </div>
