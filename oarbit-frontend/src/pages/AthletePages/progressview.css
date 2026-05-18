@@ -1,0 +1,35 @@
+#progress-view-page .interval-information td {
+  color: #5C5C5C; 
+  font-size: 0.8rem; 
+  text-align: center;
+}
+
+.matched-past-container.progress {
+  width: 100%;
+}
+
+.button-container.progress-page {
+  display: flex; 
+  justify-content: center;
+}
+
+.button-container.progress-page #progress-view-intervals {
+  width: 60%;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.matched-past-container.progress button{
+  margin-top: 0.5rem; 
+  margin-bottom: 0.5rem;
+}
+
+#matching-past-progress-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+#matching-past-progress-container button {
+  width: 60%;
+}

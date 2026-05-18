@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { isPropertySignature } from 'typescript';
 import DateSelector from "../../components/DateSelector/DateSelector";
 import CoachNavbar from "../../components/navbar/CoachNavbar";
 import { assignedWorkoutStatus, CoachOverviewWorkout, trainingTypeEnum, workoutTypeEnum } from '../../types/types';

@@ -1,9 +1,9 @@
-import { AssignedWorkout, CompleteWorkoutFromTemplate, IntervalComplete, IntervalTemplate, workoutTypeEnum, CompleteWorkoutFromManual, assignedWorkoutStatus, trainingTypeEnum } from '../../types/types';
-import { Form, useNavigate } from 'react-router-dom';
+import {  IntervalComplete, workoutTypeEnum, CompleteWorkoutFromManual, assignedWorkoutStatus, trainingTypeEnum } from '../../types/types';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { formatDisplay, formatSplitTime, parseTimeToSeconds } from '../../utils/timeFormats';
+import {  formatSplitTime } from '../../utils/timeFormats';
 import './builders.css';
-import { FormIntervalTimeInputCell, liveTimeStringValidation, secsToTimeString } from '../../utils/useTimeInput';
+import { FormIntervalTimeInputCell, secsToTimeString } from '../../utils/useTimeInput';
 
 const baseCompleteWorkout: CompleteWorkoutFromManual = {
   title: "",
@@ -44,7 +44,7 @@ export default function LogManualBuilder() {
   }
 
   function handleSelectWorkoutType(option: any) {
-    if (option == "Default") return;
+    if (option === "Default") return;
     setCompleteWorkout((prev) => ({
       ...prev, workoutType: option
     }))
@@ -52,7 +52,7 @@ export default function LogManualBuilder() {
   }
 
   function handleSelectTrainingType(option: any) {
-    if (option == "Default") return;
+    if (option === "Default") return;
     setCompleteWorkout((prev) => ({
       ...prev, trainingType: option
     }))
@@ -99,7 +99,7 @@ export default function LogManualBuilder() {
     if (interval.completedTimeSecs) updatedInterval.completedSplitSecs = calculateSplitValue(updatedInterval.completedDistance!, interval.completedTimeSecs);
     setCompleteWorkout((prev) => ({
       ...prev, intervals: prev.intervals.map((itv) => {
-        if (itv.intervalNumber == interval.intervalNumber) return updatedInterval;
+        if (itv.intervalNumber === interval.intervalNumber) return updatedInterval;
         return itv;
       })
     }))
@@ -109,7 +109,7 @@ export default function LogManualBuilder() {
     if (interval.completedDistance) updatedInterval.completedSplitSecs = calculateSplitValue(interval.completedDistance, updatedInterval.completedTimeSecs!);
     setCompleteWorkout((prev) => ({
       ...prev, intervals: prev.intervals.map((itv) => {
-        if (itv.intervalNumber == interval.intervalNumber) return updatedInterval;
+        if (itv.intervalNumber === interval.intervalNumber) return updatedInterval;
         return itv;
       })
     }))
@@ -118,7 +118,7 @@ export default function LogManualBuilder() {
     const updatedInterval = { ...interval, completedHeartRate: newValue }
     setCompleteWorkout((prev) => ({
       ...prev, intervals: prev.intervals.map((itv) => {
-        if (itv.intervalNumber == interval.intervalNumber) return updatedInterval;
+        if (itv.intervalNumber === interval.intervalNumber) return updatedInterval;
         return itv;
       })
     }))
@@ -127,7 +127,7 @@ export default function LogManualBuilder() {
     const updatedInterval = { ...interval, completedStrokeRate: newValue };
     setCompleteWorkout((prev) => ({
       ...prev, intervals: prev.intervals.map((itv) => {
-        if (itv.intervalNumber == interval.intervalNumber) return updatedInterval;
+        if (itv.intervalNumber === interval.intervalNumber) return updatedInterval;
         return itv;
       })
     }))
@@ -173,7 +173,7 @@ export default function LogManualBuilder() {
   }
 
   function handleDeleteInterval(index: number) {
-    if (completeWorkout.intervals.length == 1) return; 
+    if (completeWorkout.intervals.length === 1) return; 
     setCompleteWorkout((prev) => ({...prev, intervals: 
       prev.intervals.filter((_, i) => i !== index).map((interval, i) => ({...interval, intervalNumber: i + 1}))
     }))
