@@ -165,7 +165,7 @@ export default function ProgressView() {
       <div id="progress-view-page" className="progress-view-page">
         <div className="progress-view-content">
           <div className="title-container">
-            <p className="title">Title</p>
+            <p className="title">Past Sessions</p>
           </div>
 
           <div className="card-list">
